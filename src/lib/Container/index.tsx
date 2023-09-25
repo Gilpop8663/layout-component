@@ -1,4 +1,4 @@
-import { ElementType, ReactElement, ReactNode, forwardRef } from 'react';
+import { ElementType, ReactNode, forwardRef } from 'react';
 import { PolymorphicComponentProps, PolymorphicRef } from '../types/common';
 import * as S from './style';
 
@@ -9,7 +9,7 @@ export interface ContainerProps {
 
 type ContainerComponent = <T extends ElementType>(
   props: PolymorphicComponentProps<T, ContainerProps>
-) => ReactNode | ReactElement | null;
+) => ReactNode | null;
 
 const Container: ContainerComponent = forwardRef(function Container<
   T extends ElementType = 'div'
