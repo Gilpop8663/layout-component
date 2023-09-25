@@ -1,4 +1,10 @@
-import { CSSProperties, ElementType, ReactNode, forwardRef } from 'react';
+import {
+  CSSProperties,
+  ElementType,
+  ReactElement,
+  ReactNode,
+  forwardRef,
+} from 'react';
 import {
   CommonProps,
   PolymorphicComponentProps,
@@ -16,7 +22,7 @@ export interface FlexProps {
 
 type FlexComponent = <T extends ElementType>(
   props: PolymorphicComponentProps<T, FlexProps>
-) => ReactNode | null;
+) => ReactNode | ReactElement | null;
 
 const Flex: FlexComponent = forwardRef(function Flex<
   T extends ElementType = 'div'
